@@ -10,5 +10,7 @@
     <string name="table_4">Table 4</string>
     <string name="table_5">Table 5</string>
     <string name="table_6">Table 6</string>
+    <string name="menu">Menu</string>
+    <string name="forgotpass">Forgot Your Password ?</string>
 
 </resources>
