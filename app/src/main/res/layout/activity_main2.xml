@@ -45,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:backgroundTint="#000000"
+        android:onClick="submit"
         android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="@+id/editTextNumberPassword"
         app:layout_constraintHorizontal_bias="0.504"
