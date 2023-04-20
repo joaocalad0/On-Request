@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">onrequest</string>
+    <string name="TapToStart">TAP TO START</string>
+    <string name="ID">ID</string>
+    <string name="PAassword">Password</string>
+    <string name="submit">Submit</string>
+    <string name="table_1">Table 1</string>
+    <string name="table_2">Table 2</string>
+    <string name="table_3">Table 3</string>
+    <string name="table_4">Table 4</string>
+    <string name="table_5">Table 5</string>
+    <string name="table_6">Table 6</string>
+
 </resources>
