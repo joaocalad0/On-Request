@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">onrequest</string>
+    <string name="TapToStart">TAP TO START</string>
+    <string name="ID">ID</string>
+    <string name="PAassword">Password</string>
+    <string name="submit">Submit</string>
 </resources>

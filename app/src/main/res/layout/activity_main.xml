@@ -7,12 +7,40 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/textView"
+        android:layout_width="109dp"
+        android:layout_height="22dp"
+        android:text="@string/TapToStart"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.468" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="86dp"
+        android:layout_height="90dp"
+        android:onClick="imageView1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.435"
+        app:srcCompat="@drawable/power_off_regular_24"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="245dp"
+        android:layout_height="315dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/buy_on_market_high_resolution_logo_color_on_transparent_background" />
 </androidx.constraintlayout.widget.ConstraintLayout>
