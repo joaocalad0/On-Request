@@ -12,5 +12,8 @@
     <string name="table_6">Table 6</string>
     <string name="menu">Menu</string>
     <string name="forgotpass">Forgot Your Password ?</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
 
 </resources>
