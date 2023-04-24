@@ -71,7 +71,7 @@
         android:text="@string/forgotpass"
         android:textColorHint="#000000"
         android:textSize="12sp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="@+id/editTextNumberPassword"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword"
