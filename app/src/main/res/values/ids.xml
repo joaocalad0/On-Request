@@ -2,4 +2,5 @@
 <resources>
     <item name="recyclerView" type="id" />
     <item name="textViewFood" type="id" />
+    <item name="textViewDrink" type="id" />
 </resources>
