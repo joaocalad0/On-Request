@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recyclerView" type="id" />
+    <item name="textViewFood" type="id" />
+    <item name="textViewDrink" type="id" />
+</resources>
