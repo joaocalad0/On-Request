@@ -29,10 +29,10 @@ public class MenuDetailsActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         if (bundle!=null) {
             int position = bundle.getInt(KEY_MENU_POSITION, -1);
-            Menu menu = MemoryDataBase.getMenuDForPosition(position);
+            Menu menu = MemoryDataBase.getAllMenus(position);
             ImageView imageViewAvatar = findViewById(R.id.imageViewAvatar);
-            TextView textViewDrink = findViewById(R.id.textViewDrink);
-            TextView textViewFood = findViewById(R.id.textViewFood);
+            TextView textViewDrink = findViewById(R.id.textviewdrink);
+            TextView textViewFood = findViewById(R.id.textviewfood);
 
             Glide.with(this).load(menu.getAvatar()).into(imageViewAvatar);
             textViewDrink.setText(menu.getDrink());
