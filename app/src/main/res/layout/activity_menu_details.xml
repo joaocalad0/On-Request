@@ -20,24 +20,25 @@
 
     <TextView
         android:id="@+id/textviewfood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="117dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/textviewfood"
         android:text="@string/textviewfood"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewAvatar"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/textviewdrink"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/textviewdrink"
+        app:layout_constraintTop_toBottomOf="@+id/textviewdrink" />
 
     <TextView
         android:id="@+id/textviewdrink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:text="@string/textviewdrink"
-        app:layout_constraintEnd_toEndOf="@+id/textviewfood"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="@+id/textviewfood"
-        app:layout_constraintTop_toBottomOf="@+id/textviewfood" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewAvatar"
+        app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
