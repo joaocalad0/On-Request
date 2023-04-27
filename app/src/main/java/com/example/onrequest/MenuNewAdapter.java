@@ -13,17 +13,17 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
+public class MenuNewAdapter extends RecyclerView.Adapter<MenuNewAdapter.MenuViewHolder> {
 
     // variável de instância que armazena a lista de Contactos que este Adapter vai utilizar
-    private final List<Menu> menuList;
+    private List<Menu> menuList;
 
 
     /**
      * Construtor que recebe uma Lista de contactos a ser utilizada por este ContactAdapter
      * @param menuList
      */
-    public MenuAdapter(List<Menu> menuList) {
+    public MenuNewAdapter(List<Menu> menuList) {
         // armazenar na variável de instância o valor do parâmetro do construtor
         this.menuList = menuList;
     }

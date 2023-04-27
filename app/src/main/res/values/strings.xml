@@ -18,5 +18,7 @@
     <string name="AddMoreTables">Add more Tables...</string>
     <string name="products">Products</string>
     <string name="imageViewAvatar">Avatar</string>
+    <string name="textviewdrink">Drink</string>
+    <string name="textviewfood">Food</string>
 
 </resources>

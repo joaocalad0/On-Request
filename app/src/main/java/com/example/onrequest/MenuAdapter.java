@@ -10,17 +10,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class MenuNewAdapter extends RecyclerView.Adapter<MenuNewAdapter.MenuViewHolder> {
+public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
 
     // variável de instância que armazena a lista de Produtos que este Adapter vai utilizar
-    private final List<Menu> menuList;
+    private  List<Menu> menuList;
 
 
     /**
      * Construtor que recebe uma Lista de contactos a ser utilizada por este MenuAdapter
      * @param menuList
      */
-    public MenuAdapter(List<Menu> menuList) {
+    private MenuAdapter(List<Menu> menuList) {
         // armazenar na variável de instância o valor do parâmetro do construtor
         this.menuList = menuList;
     }

@@ -16,7 +16,7 @@ public class MainActivity4 extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         // criar um objeto do tipo MenuAdapter (que extende Adapter)
-        MenuAdapter adapter = new MenuAdapter(MemoryDataBase.getAllMenus());
+        MenuNewAdapter adapter = new MenuNewAdapter(MemoryDataBase.getAllMenus());
         // criar um objecto do tipo LinearLayoutManager para ser utilizado na RecyclerView
         // o LinearLayoutManager tem como orientação default a orientação Vertical
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
