@@ -18,6 +18,13 @@ public class MemoryDataBase {
             menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
             menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
             menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
+            menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
+            menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
+            menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
+            menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
+            menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
+            menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
+            menuList.add(new Menu("Lorem Ipsum", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "https://www.w3schools.com/howto/img_avatar.png"));
         }
         return menuList;
     }
