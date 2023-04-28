@@ -1,10 +1,10 @@
 package com.example.onrequest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -17,5 +17,10 @@ public class MainActivity2 extends AppCompatActivity {
     public void submit (View view) {
         Intent submit = new Intent(this, MainActivity3.class);
         startActivity(submit);
+    }
+
+    public void forgot (View view) {
+        Intent forgot = new Intent(this, CreateAccount.class);
+        startActivity(forgot);
     }
 }
