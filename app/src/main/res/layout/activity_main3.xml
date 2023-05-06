@@ -18,7 +18,7 @@
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/table1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/table2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -44,56 +44,56 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/table3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#000000"
         android:onClick="table3"
         android:text="@string/table_3"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/table1"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toStartOf="@+id/table1"
+        app:layout_constraintTop_toBottomOf="@+id/table1" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/table4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#0B0A0A"
         android:onClick="table4"
         android:text="@string/table_4"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="@+id/table2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintStart_toStartOf="@+id/table2"
+        app:layout_constraintTop_toBottomOf="@+id/table2" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/table5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#0E0E0E"
         android:onClick="table5"
         android:text="@string/table_5"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="@+id/table3"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintStart_toStartOf="@+id/table3"
+        app:layout_constraintTop_toBottomOf="@+id/table3" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/table6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#0C0C0C"
         android:onClick="table6"
         android:text="@string/table_6"
-        app:layout_constraintEnd_toEndOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="@+id/table4"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintStart_toStartOf="@+id/table4"
+        app:layout_constraintTop_toBottomOf="@+id/table4" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="410dp"
@@ -101,9 +101,9 @@
         android:layout_marginTop="328dp"
         android:layout_marginBottom="27dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="@+id/table6"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="@+id/button6"
+        app:layout_constraintStart_toStartOf="@+id/table5"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:menu="@menu/bottom_navigation_bar" />
 
@@ -116,8 +116,8 @@
         android:textIsSelectable="false"
         android:textSize="14sp"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="@+id/table6"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintStart_toStartOf="@+id/table6"
+        app:layout_constraintTop_toBottomOf="@+id/table6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
