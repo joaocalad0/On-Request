@@ -1,5 +1,9 @@
 <project version="4">
   <component name="EntryPointsManager">
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="androidx.room.Insert" />
+      <item index="1" class="java.lang.String" itemvalue="androidx.room.Query" />
+    </list>
     <pattern value="com.example.onrequest.Menu" method="getFood" />
     <pattern value="com.example.onrequest.Menu" />
   </component>

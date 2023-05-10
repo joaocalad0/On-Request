@@ -9,19 +9,19 @@ import java.util.List;
 
 @Dao
 public interface MenuDao {
-    @Query("SELECT * FROM menu")
-    List<Menu> getAll();
+    @Query("SELECT * FROM MenuEntraces")
+    List<MenuEntraces> getAll();
 
-    @Query("SELECT * FROM menu WHERE id = :menuId")
-    Menu getById(long menuId);
-
-    @Insert
-    void insert(Menu menu);
+    @Query("SELECT * FROM MenuEntraces WHERE id = :menuId")
+    MenuEntraces getById(long menuId);
 
     @Insert
-    void insert(List<Menu> menuList);
+    void insert(MenuEntraces menu);
+
+    @Insert
+    void insert(List<MenuEntraces> menuList);
 
     @Update
-    void update(Menu menu);
+    void update(MenuEntraces menu);
 }
 

@@ -16,14 +16,14 @@ import java.util.List;
 public class MenuNewAdapter extends RecyclerView.Adapter<MenuNewAdapter.MenuViewHolder> {
 
     // variável de instância que armazena a lista de Contactos que este Adapter vai utilizar
-    private List<Menu> menuList;
+    private List<MenuEntraces> menuList;
 
 
     /**
      * Construtor que recebe uma Lista de contactos a ser utilizada por este ContactAdapter
      * @param menuList
      */
-    public MenuNewAdapter(List<Menu> menuList) {
+    public MenuNewAdapter(List<MenuEntraces> menuList) {
         // armazenar na variável de instância o valor do parâmetro do construtor
         this.menuList = menuList;
     }
@@ -54,7 +54,7 @@ public class MenuNewAdapter extends RecyclerView.Adapter<MenuNewAdapter.MenuView
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
         // obter o contact que existe na lista na posição dada pelo parâmetro position
-        Menu menu = this.menuList.get(position);
+        MenuEntraces menu = this.menuList.get(position);
         // definir que o valor da TextView no ViewHolder passa a conter o valor da propriedade name do Contact
         holder.textViewDrink.setText(menu.getDrink());
         Glide.with(holder.rootView.getContext()).load(menu.getAvatar()).into(holder.imageViewAvatar);
