@@ -12,16 +12,16 @@ public interface MenuDao {
     @Query("SELECT * FROM MenuEntraces")
     List<MenuEntraces> getAll();
 
-    @Query("SELECT * FROM MenuEntraces WHERE id = :menuId")
-    MenuEntraces getById(long menuId);
+    @Query("SELECT * FROM MenuEntraces WHERE id = :Id")
+    MenuEntraces getById(long Id);
 
     @Insert
-    void insert(MenuEntraces menu);
+    void insert(MenuEntraces menuEntraces);
 
     @Insert
-    void insert(List<MenuEntraces> menuList);
+    void insert(List<MenuEntraces> menuEntracesList);
 
     @Update
-    void update(MenuEntraces menu);
+    void update(MenuEntraces menuEntraces);
 }
 

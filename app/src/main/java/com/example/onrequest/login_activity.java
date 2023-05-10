@@ -6,16 +6,16 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity2 extends AppCompatActivity {
+public class login_activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.login_activity);
     }
 
     public void submit (View view) {
-        Intent submit = new Intent(this, MainActivity3.class);
+        Intent submit = new Intent(this, tables_activity.class);
         startActivity(submit);
     }
 

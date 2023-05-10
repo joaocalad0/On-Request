@@ -22,13 +22,13 @@ public abstract class AppDatabase extends RoomDatabase {
 
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                    AppDatabase.class, "MenuDB")
+                    AppDatabase.class, "MenuEntracesDB")
                     .allowMainThreadQueries().
                     addCallback(new Callback() {
                 @Override
                 public void onCreate(@NonNull SupportSQLiteDatabase db) {
                     super.onCreate(db);
-                    db.execSQL("INSERT INTO menu VALUES(1, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.','https://www.w3schools.com/howto/img_avatar.png')");
+                    db.execSQL("INSERT INTO menu VALUES(1, '123', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.','https://www.w3schools.com/howto/img_avatar.png')");
                     db.execSQL("INSERT INTO menu VALUES(2, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
                     db.execSQL("INSERT INTO menu VALUES(3, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
                     db.execSQL("INSERT INTO menu VALUES(4, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");

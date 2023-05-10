@@ -20,12 +20,19 @@ public class MenuEntraces {
     }
 
     public String getDrink() {
+
         return drink;
     }
 
     public String getFood() {
+
         return food;
     }
 
-    public String getAvatar() {return avatar;}
+    public String getAvatar() {
+        return avatar;}
+
+    public long getId() {
+        return id;
+    }
 }

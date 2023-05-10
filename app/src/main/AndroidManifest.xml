@@ -18,19 +18,19 @@
             android:name=".CreateAccount"
             android:exported="false" />
         <activity
-            android:name=".MainActivity4"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
+            android:name=".tables_activity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".login_activity"
             android:exported="false" />
         <activity
             android:name=".MenuDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".start_activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
