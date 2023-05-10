@@ -13,16 +13,16 @@ import java.util.List;
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
 
     // variável de instância que armazena a lista de Produtos que este Adapter vai utilizar
-    private  List<Menu> menuList;
+    private  List<MenuEntraces> menuEntracesList;
 
 
     /**
      * Construtor que recebe uma Lista de contactos a ser utilizada por este MenuAdapter
-     * @param menuList
+     * @param menuEntracesList
      */
-    private MenuAdapter(List<Menu> menuList) {
+    private MenuAdapter(List<MenuEntraces> menuEntracesList) {
         // armazenar na variável de instância o valor do parâmetro do construtor
-        this.menuList = menuList;
+        this.menuEntracesList = menuEntracesList;
     }
 
     /**
@@ -52,7 +52,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
         // obter o contact que existe na lista na posição dada pelo parâmetro position
-        Menu menu = this.menuList.get(position);
+        MenuEntraces menu = this.menuEntracesList.get(position);
         // definir que o valor da TextView no ViewHolder passa a conter o valor da propriedade name do Menu
         holder.textViewDrink.setText(menu.getDrink());
     }
@@ -63,7 +63,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
      */
     @Override
     public int getItemCount() {
-        return this.menuList.size();
+        return this.menuEntracesList.size();
     }
 
     public static class MenuViewHolder extends RecyclerView.ViewHolder {

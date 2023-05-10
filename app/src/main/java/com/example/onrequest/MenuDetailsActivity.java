@@ -29,7 +29,7 @@ public class MenuDetailsActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         if (bundle!=null) {
             int position = bundle.getInt(KEY_MENU_POSITION, -1);
-            Menu menu = MemoryDataBase.getAllMenus(position);
+            MenuEntraces menu = MemoryDataBase.getAllMenus(position);
             ImageView imageViewAvatar = findViewById(R.id.imageViewAvatar);
             TextView textViewDrink = findViewById(R.id.textviewdrink);
             TextView textViewFood = findViewById(R.id.textviewfood);
