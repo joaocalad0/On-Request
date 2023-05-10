@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Onrequest"
         tools:targetApi="31">
         <activity
+            android:name=".AddMenuEntracesActivity"
+            android:exported="false" />
+        <activity
             android:name=".CreateAccount"
             android:exported="false" />
         <activity

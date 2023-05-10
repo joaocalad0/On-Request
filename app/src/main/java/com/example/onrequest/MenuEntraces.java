@@ -12,11 +12,15 @@ public class MenuEntraces {
     private String food;
     private String avatar;
 
-    public MenuEntraces(long id, String drink, String food, String avatar) {
-        this.id = id;
+    private Double food_price;
+    private Double drink_price;
+
+    public MenuEntraces(String drink, String food, String avatar, Double drink_price,Double food_price) {
         this.drink = drink;
         this.food = food;
         this.avatar = avatar;
+        this.food_price = food_price;
+        this.drink_price = drink_price;
     }
 
     public String getDrink() {
@@ -35,4 +39,15 @@ public class MenuEntraces {
     public long getId() {
         return id;
     }
+
+
+    public Double getFood_price() {
+        return food_price;
+    }
+
+    public Double getDrink_price() {
+        return drink_price;
+    }
 }
+
+
