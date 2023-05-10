@@ -40,7 +40,7 @@ public class MenuNewAdapter extends RecyclerView.Adapter<MenuNewAdapter.MenuView
     @Override
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Criar um objeto do tipo View com base no layout criado (contact_item.xml)
-        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu, parent, false);
+        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_entraces, parent, false);
         // criar e devolver um objeto do tipo ContactViewHolder
         return new MenuViewHolder(rootView);
     }

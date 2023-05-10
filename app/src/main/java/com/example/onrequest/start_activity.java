@@ -6,16 +6,16 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CreateAccount extends AppCompatActivity {
+public class start_activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_account);
+        setContentView(R.layout.start_activity);
     }
 
-    public void create (View view) {
-        Intent create = new Intent(this, login_activity.class);
-        startActivity(create);
+    public void imageView1 (View view) {
+        Intent imageView1 = new Intent(this, login_activity.class);
+        startActivity(imageView1);
     }
 }
