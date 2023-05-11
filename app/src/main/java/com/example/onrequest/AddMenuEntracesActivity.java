@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Dao;
 
 public class AddMenuEntracesActivity extends AppCompatActivity {
 
@@ -46,7 +45,7 @@ public class AddMenuEntracesActivity extends AppCompatActivity {
 
         AppDatabase appDatabase = AppDatabase.getInstance(this);
         MenuDao menuDao = appDatabase.getMenuDao();
-//        contactDao.insert(newContact);
+//        FoodDao.insert(newFodd);
 
         MenuEntraces menuEntraces = new MenuEntraces( food, 23, avatar);
 
@@ -60,7 +59,7 @@ public class AddMenuEntracesActivity extends AppCompatActivity {
         Double drink_price = Double.valueOf(this.editTextDrink_price.getText().toString());
         String avatar = this.editTextAvatar.getText().toString();
 
-        MenuEntraces newMenuEntraces = new MenuEntraces(0, drink, drink_price, avatar);
+        MenuEntraces newMenuEntraces = new MenuEntraces(drink, 22, avatar);
 
 //        AppDatabase appDatabase = AppDatabase.getInstance(this);
 //        ContactDao contactDao = appDatabase.getContactDao();

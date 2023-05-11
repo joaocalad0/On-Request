@@ -9,13 +9,14 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 
-@Database(entities = {MenuEntraces.class, Message.class}, version = 1)
+@Database(entities = {MenuEntraces.class, Food.class, Drink.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract MenuDao getMenuDao();
 
-    public abstract MessageDao getMessageDao();
+    public abstract DrinkDao  getDrinkDao();
 
+    public abstract FoodDao getFoodDao();
     private static AppDatabase INSTANCE;
 
     public static AppDatabase getInstance(Context context) {
