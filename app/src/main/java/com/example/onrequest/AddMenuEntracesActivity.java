@@ -3,7 +3,6 @@ package com.example.onrequest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,8 +27,8 @@ public class AddMenuEntracesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_menu_entraces);
-        addFood();
-        addDrink();
+        addFood(0);
+        addDrink(0);
 
 
         //this.editTextName = findViewById(R.id.editTextName);
@@ -37,7 +36,7 @@ public class AddMenuEntracesActivity extends AppCompatActivity {
         //this.editTextAvatar = findViewById(R.id.editTextAvatar);
     }
 
-    public void addFood(View view) {
+    public void addFood(int view) {
         // save contact do Database and finish Activity
         String food = editTextFood_price.getText().toString();
         Double food_price = Double.valueOf(editTextFood_price.getText().toString());
@@ -53,7 +52,7 @@ public class AddMenuEntracesActivity extends AppCompatActivity {
         finish();
     }
 
-    public void addDrink(View view) {
+    public void addDrink(int view) {
         // save contact do Database and finish Activity
         String drink = this.editTextDrink_price.getText().toString();
         Double drink_price = Double.valueOf(this.editTextDrink_price.getText().toString());
