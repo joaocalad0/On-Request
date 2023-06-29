@@ -1,4 +1,4 @@
-package com.example.onrequest;
+package com.example.onrequest.schema;
 
 import android.content.Context;
 
@@ -6,17 +6,18 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 
-@Database(entities = {MenuEntraces.class, Food.class, Drink.class}, version = 1)
+@Database(entities = {Food.class, Drink.class}, version = 1)
+@TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
-    public abstract MenuDao getMenuDao();
-
-    public abstract DrinkDao  getDrinkDao();
+    public abstract DrinkDao getDrinkDao();
 
     public abstract FoodDao getFoodDao();
+
     private static AppDatabase INSTANCE;
 
     public static AppDatabase getInstance(Context context) {

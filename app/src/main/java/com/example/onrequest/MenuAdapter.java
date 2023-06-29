@@ -8,21 +8,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.onrequest.schema.MenuItem;
+
 import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
 
     // variável de instância que armazena a lista de Produtos que este Adapter vai utilizar
-    private  List<MenuEntraces> menuEntracesList;
-
+    private  List<MenuItem> menuItems;
 
     /**
      * Construtor que recebe uma Lista de contactos a ser utilizada por este MenuAdapter
      * @param menuEntracesList
      */
-    private MenuAdapter(List<MenuEntraces> menuEntracesList) {
+    private MenuAdapter(List<MenuItem> menuEntracesList) {
         // armazenar na variável de instância o valor do parâmetro do construtor
-        this.menuEntracesList = menuEntracesList;
+        this.menuItems = menuEntracesList;
     }
 
     /**
@@ -52,9 +53,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
         // obter o contact que existe na lista na posição dada pelo parâmetro position
-        MenuEntraces menu = this.menuEntracesList.get(position);
+        MenuItem menu = this.menuItems.get(position);
         // definir que o valor da TextView no ViewHolder passa a conter o valor da propriedade name do Menu
-        holder.textViewDrink.setText(menu.getDrink());
+        holder.textViewDrink.setText(menu.getName());
     }
 
     /**
@@ -63,7 +64,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
      */
     @Override
     public int getItemCount() {
-        return this.menuEntracesList.size();
+        return this.menuItems.size();
     }
 
     public static class MenuViewHolder extends RecyclerView.ViewHolder {

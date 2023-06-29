@@ -1,4 +1,4 @@
-package com.example.onrequest;
+package com.example.onrequest.schema;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -10,7 +10,7 @@ import java.util.List;
     @Dao
     public interface DrinkDao {
 
-        @Query("SELECT * FROM Drink")
+        @Query("SELECT * FROM drink")
         List<Drink> getAll();
 
         @Insert

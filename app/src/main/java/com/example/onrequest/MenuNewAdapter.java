@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.onrequest.schema.MenuItem;
 
 import java.util.List;
 
 public class MenuNewAdapter extends RecyclerView.Adapter<MenuNewAdapter.MenuViewHolder> {
 
     // variável de instância que armazena a lista de Contactos que este Adapter vai utilizar
-    private List<MenuEntraces> menuList;
-
+    private List<MenuItem> menuList;
 
     /**
      * Construtor que recebe uma Lista de contactos a ser utilizada por este ContactAdapter
      * @param menuList
      */
-    public MenuNewAdapter(List<MenuEntraces> menuList) {
+    public MenuNewAdapter(List<MenuItem> menuList) {
         // armazenar na variável de instância o valor do parâmetro do construtor
         this.menuList = menuList;
     }
@@ -54,16 +54,14 @@ public class MenuNewAdapter extends RecyclerView.Adapter<MenuNewAdapter.MenuView
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
         // obter o contact que existe na lista na posição dada pelo parâmetro position
-        MenuEntraces menu = this.menuList.get(position);
-        // definir que o valor da TextView no ViewHolder passa a conter o valor da propriedade name do Contact
-        holder.textViewDrink.setText(menu.getDrink());
-        Glide.with(holder.rootView.getContext()).load(menu.getAvatar()).into(holder.imageViewAvatar);
+        MenuItem menuItem = this.menuList.get(position);
+        holder.textViewDrink.setText(menuItem.getName());
+        Glide.with(holder.rootView.getContext()).load(menuItem.getDrinkAvatar()).into(holder.imageViewAvatar);
 
         holder.rootView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                MenuDetailsActivity.startActivity(holder.rootView.getContext(), holder.getAdapterPosition());
+                MenuDetailsActivity.startActivity(holder.rootView.getContext(), menuItem);
             }
         });
 
