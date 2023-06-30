@@ -4,42 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imageViewAvatar"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="91dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="@string/imageViewAvatar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textviewfood"
+        android:id="@+id/txtViewMenuItem"
         android:layout_width="117dp"
         android:layout_height="34dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="28dp"
         android:contentDescription="@string/textviewfood"
         android:text="@string/textviewfood"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/textviewdrink"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/textviewdrink"
-        app:layout_constraintTop_toBottomOf="@+id/textviewdrink" />
-
-    <TextView
-        android:id="@+id/textviewdrink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/textviewdrink"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewAvatar"
-        app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

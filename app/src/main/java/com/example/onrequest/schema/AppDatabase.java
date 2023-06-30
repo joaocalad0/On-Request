@@ -9,14 +9,11 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-
-@Database(entities = {Food.class, Drink.class}, version = 1)
+@Database(entities = {MenuItem.class}, version = 1)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
-    public abstract DrinkDao getDrinkDao();
-
-    public abstract FoodDao getFoodDao();
+    public abstract MenuItemDao getMenuItemDao();
 
     private static AppDatabase INSTANCE;
 
@@ -30,21 +27,8 @@ public abstract class AppDatabase extends RoomDatabase {
                 @Override
                 public void onCreate(@NonNull SupportSQLiteDatabase db) {
                     super.onCreate(db);
-                    db.execSQL("INSERT INTO menu VALUES(1, '123', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.','https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(2, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(3, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(4, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(5, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(6, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(7, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(8, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(9, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(10, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(11, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(12, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(13, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(14, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
-                    db.execSQL("INSERT INTO menu VALUES(15, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'https://www.w3schools.com/howto/img_avatar.png')");
+                    db.execSQL( "INSERT INTO menuitem VALUES(1, 'coca cola', 10.2,'https://www.w3schools.com/howto/img_avatar.png', 'DRINK')" );
+                    db.execSQL( "INSERT INTO menuitem VALUES(2, 'hambuguer', 10.2,'https://www.w3schools.com/howto/img_avatar.png', 'FOOD')" );
                 }
             }).build();
         }

@@ -1,17 +1,118 @@
 package com.example.onrequest.schema;
 
 import android.net.Uri;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-import java.io.Serializable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-public interface MenuItem extends Serializable {
+@Entity
+public class MenuItem implements Parcelable {
 
-    long getId();
+    @PrimaryKey(autoGenerate = true)
+    private long menuItemId;
 
-    Double getPrice();
+    @Nullable
+    @ColumnInfo(name = "menuItemName")
+    private String menuItemName;
 
-    String getName();
+    @ColumnInfo(name = "menuItemPrice")
+    private double menuItemPrice;
 
-    Uri getDrinkAvatar();
+    @Nullable
+    @ColumnInfo(name = "menuItemAvatar")
+    private Uri menuItemAvatar;
 
+    @Nullable
+    @ColumnInfo(name = "menuItemCategory")
+    private MenuItemCategory menuItemCategory;
+
+    public MenuItem() {
+    }
+
+    public MenuItem(long menuItemId, @Nullable String menuItemName, double menuItemPrice,
+                    @Nullable Uri menuItemAvatar, @Nullable MenuItemCategory menuItemCategory) {
+        this.menuItemId = menuItemId;
+        this.menuItemName = menuItemName;
+        this.menuItemPrice = menuItemPrice;
+        this.menuItemAvatar = menuItemAvatar;
+        this.menuItemCategory = menuItemCategory;
+    }
+
+    public long getMenuItemId() {
+        return menuItemId;
+    }
+
+    public void setMenuItemId(long menuItemId) {
+        this.menuItemId = menuItemId;
+    }
+
+    public String getMenuItemName() {
+        return menuItemName;
+    }
+
+    public void setMenuItemName(String menuItemName) {
+        this.menuItemName = menuItemName;
+    }
+
+    public Double getMenuItemPrice() {
+        return menuItemPrice;
+    }
+
+    public void setMenuItemPrice(Double menuItemPrice) {
+        this.menuItemPrice = menuItemPrice;
+    }
+
+    public Uri getMenuItemAvatar() {
+        return menuItemAvatar;
+    }
+
+    public void setMenuItemAvatar(Uri menuItemAvatar) {
+        this.menuItemAvatar = menuItemAvatar;
+    }
+
+    public MenuItemCategory getMenuItemCategory() {
+        return menuItemCategory;
+    }
+
+    public void setMenuItemCategory(MenuItemCategory menuItemCategory) {
+        this.menuItemCategory = menuItemCategory;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    protected MenuItem(Parcel in) {
+        this.menuItemId = in.readLong();
+        this.menuItemName = in.readString();
+        this.menuItemPrice = in.readDouble();
+        this.menuItemAvatar = Uri.parse(in.readString());
+        this.menuItemCategory = MenuItemCategory.valueOf(in.readString());
+    }
+
+    public static final Creator<MenuItem> CREATOR = new Creator<MenuItem>() {
+        @Override
+        public MenuItem createFromParcel(Parcel in) {
+            return new MenuItem(in);
+        }
+
+        @Override
+        public MenuItem[] newArray(int size) {
+            return new MenuItem[size];
+        }
+    };
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int flags) {
+        parcel.writeLong(this.menuItemId);
+        parcel.writeString(this.menuItemName);
+        parcel.writeDouble(this.menuItemPrice);
+        parcel.writeString(this.menuItemAvatar.toString());
+        parcel.writeString(this.menuItemCategory.name());
+    }
 }

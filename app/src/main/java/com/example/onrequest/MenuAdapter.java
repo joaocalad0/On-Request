@@ -3,27 +3,29 @@ package com.example.onrequest;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.onrequest.schema.MenuItem;
 
 import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
 
-    // variável de instância que armazena a lista de Produtos que este Adapter vai utilizar
-    private  List<MenuItem> menuItems;
+    // variável de instância que armazena a lista de Contactos que este Adapter vai utilizar
+    private final List<MenuItem> menuList;
 
     /**
-     * Construtor que recebe uma Lista de contactos a ser utilizada por este MenuAdapter
-     * @param menuEntracesList
+     * Construtor que recebe uma Lista de contactos a ser utilizada por este ContactAdapter
+     * @param menuList
      */
-    private MenuAdapter(List<MenuItem> menuEntracesList) {
+    public MenuAdapter(List<MenuItem> menuList) {
         // armazenar na variável de instância o valor do parâmetro do construtor
-        this.menuItems = menuEntracesList;
+        this.menuList = menuList;
     }
 
     /**
@@ -37,9 +39,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     @NonNull
     @Override
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Criar um objeto do tipo View com base no layout criado (menu_.xml)
-        View rootView;
-        rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_entraces, parent, false);
+        // Criar um objeto do tipo View com base no layout criado (contact_item.xml)
+        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_menu_details, parent, false);
         // criar e devolver um objeto do tipo ContactViewHolder
         return new MenuViewHolder(rootView);
     }
@@ -53,9 +54,23 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
         // obter o contact que existe na lista na posição dada pelo parâmetro position
-        MenuItem menu = this.menuItems.get(position);
-        // definir que o valor da TextView no ViewHolder passa a conter o valor da propriedade name do Menu
-        holder.textViewDrink.setText(menu.getName());
+        MenuItem menuItem = this.menuList.get(position);
+        holder.txtViewMenuItem.setText(menuItem.getMenuItemName());
+        Glide.with(holder.rootView.getContext()).load(menuItem.getMenuItemAvatar()).into(holder.imageViewAvatar);
+
+        holder.rootView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MenuDetailsActivity.startActivity(holder.rootView.getContext(), menuItem);
+            }
+        });
+
+        holder.rootView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return true;
+            }
+        });
     }
 
     /**
@@ -64,16 +79,20 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
      */
     @Override
     public int getItemCount() {
-        return this.menuItems.size();
+        return this.menuList.size();
     }
 
-    public static class MenuViewHolder extends RecyclerView.ViewHolder {
+    public class MenuViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView textViewDrink;
+        private View rootView;
+        private TextView txtViewMenuItem;
+        private ImageView imageViewAvatar;
 
         public MenuViewHolder(@NonNull View rootView) {
             super(rootView);
-            this.textViewDrink = rootView.findViewById(R.id.textViewDrink);
+            this.rootView = rootView;
+            this.txtViewMenuItem = rootView.findViewById(R.id.txtViewMenuItem);
+            this.imageViewAvatar = rootView.findViewById(R.id.imageViewAvatar);
         }
     }
 }
