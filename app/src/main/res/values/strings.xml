@@ -25,4 +25,5 @@
     <string name="email">Email</string>
     <string name="id2">ID</string>
     <string name="create">Create</string>
+    <string name="total">Total:</string>
 </resources>

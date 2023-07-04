@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.onrequest.schema.MenuItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
@@ -25,7 +26,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
      */
     public MenuAdapter(List<MenuItem> menuList) {
         // armazenar na variável de instância o valor do parâmetro do construtor
-        this.menuList = menuList;
+        this.menuList = new ArrayList<>(menuList);
     }
 
     /**
@@ -71,6 +72,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                 return true;
             }
         });
+    }
+
+    public void refresh (List<MenuItem> menuItems) {
+        this.menuList.clear();
+        this.menuList.addAll(menuItems);
+        notifyDataSetChanged();
     }
 
     /**

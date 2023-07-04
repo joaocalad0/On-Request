@@ -13,6 +13,9 @@ public interface MenuItemDao {
     @Query("SELECT * FROM menuitem")
     List<MenuItem> getAll();
 
+    @Query("SELECT * FROM menuitem WHERE menuItemCategory = :category")
+    List<MenuItem> getByCategory(MenuItemCategory category);
+
     @Insert
     void insert(MenuItem menuItem);
 

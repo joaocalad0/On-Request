@@ -27,11 +27,12 @@ public abstract class AppDatabase extends RoomDatabase {
                 @Override
                 public void onCreate(@NonNull SupportSQLiteDatabase db) {
                     super.onCreate(db);
-                    db.execSQL( "INSERT INTO menuitem VALUES(1, 'coca cola', 10.2,'https://www.w3schools.com/howto/img_avatar.png', 'DRINK')" );
-                    db.execSQL( "INSERT INTO menuitem VALUES(2, 'hambuguer', 10.2,'https://www.w3schools.com/howto/img_avatar.png', 'FOOD')" );
+                    db.execSQL( "INSERT INTO menuitem VALUES(1, 'coca cola', 10.2,'https://www.w3schools.com/howto/img_avatar.png', 'DRINK', 'desc')" );
+                    db.execSQL( "INSERT INTO menuitem VALUES(2, 'hambuguer', 10.2,'https://www.w3schools.com/howto/img_avatar.png', 'FOOD', 'desc')" );
                 }
             }).build();
         }
         return INSTANCE;
     }
 }
+

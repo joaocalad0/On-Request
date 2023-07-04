@@ -31,6 +31,8 @@ public class MenuDetailsActivity extends AppCompatActivity {
             MenuItem menuItem = (MenuItem) bundle.getParcelable(MENU_ITEM);
             ImageView imageViewAvatar = findViewById(R.id.imageView7);
             TextView textViewDrink = findViewById(R.id.textView2);
+            TextView descTextView = findViewById(R.id.descTextView);
+            descTextView.setText(menuItem.getMenuItemDesc());
             textViewDrink.setText(menuItem.getMenuItemName());
             Glide.with(this).load(menuItem.getMenuItemAvatar()).into(imageViewAvatar);
         } else {

@@ -31,16 +31,21 @@ public class MenuItem implements Parcelable {
     @ColumnInfo(name = "menuItemCategory")
     private MenuItemCategory menuItemCategory;
 
+    @Nullable
+    @ColumnInfo(name = "menuItemDesc")
+    private String menuItemDesc;
+
     public MenuItem() {
     }
 
     public MenuItem(long menuItemId, @Nullable String menuItemName, double menuItemPrice,
-                    @Nullable Uri menuItemAvatar, @Nullable MenuItemCategory menuItemCategory) {
+                    @Nullable Uri menuItemAvatar, @Nullable MenuItemCategory menuItemCategory, @Nullable String menuItemDesc) {
         this.menuItemId = menuItemId;
         this.menuItemName = menuItemName;
         this.menuItemPrice = menuItemPrice;
         this.menuItemAvatar = menuItemAvatar;
         this.menuItemCategory = menuItemCategory;
+        this.menuItemDesc = menuItemDesc;
     }
 
     public long getMenuItemId() {
@@ -83,6 +88,14 @@ public class MenuItem implements Parcelable {
         this.menuItemCategory = menuItemCategory;
     }
 
+    public String getMenuItemDesc() {
+        return menuItemDesc;
+    }
+
+    public void setMenuItemDesc(String menuItemDesc) {
+        this.menuItemDesc = menuItemDesc;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -94,6 +107,7 @@ public class MenuItem implements Parcelable {
         this.menuItemPrice = in.readDouble();
         this.menuItemAvatar = Uri.parse(in.readString());
         this.menuItemCategory = MenuItemCategory.valueOf(in.readString());
+        this.menuItemDesc = in.readString();
     }
 
     public static final Creator<MenuItem> CREATOR = new Creator<MenuItem>() {
@@ -107,6 +121,7 @@ public class MenuItem implements Parcelable {
             return new MenuItem[size];
         }
     };
+
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int flags) {
         parcel.writeLong(this.menuItemId);
@@ -114,5 +129,6 @@ public class MenuItem implements Parcelable {
         parcel.writeDouble(this.menuItemPrice);
         parcel.writeString(this.menuItemAvatar.toString());
         parcel.writeString(this.menuItemCategory.name());
+        parcel.writeString(this.menuItemDesc);
     }
 }
