@@ -9,34 +9,32 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.onrequest.schema.MenuItem;
 
 public class MenuDetailsActivity extends AppCompatActivity {
 
-    private static final String KEY_MENU_POSITION = "menuPosition";
+    private static final String MENU_ITEM = "menuPosition";
 
-    public static void startActivity(Context context, int position) {
+    public static void startActivity(Context context, MenuItem menuItem) {
         Intent intent = new Intent(context, MenuDetailsActivity.class);
-        intent.putExtra(MenuDetailsActivity.KEY_MENU_POSITION, position);
+        intent.putExtra(MenuDetailsActivity.MENU_ITEM, menuItem);
         context.startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_details);
-
+        setContentView(R.layout.onclick);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        if (bundle!=null) {
-            int position = bundle.getInt(KEY_MENU_POSITION, -1);
-            MenuEntraces menu = MemoryDataBase.getAllMenus(position);
-            ImageView imageViewAvatar = findViewById(R.id.imageViewAvatar);
-            TextView textViewDrink = findViewById(R.id.textviewdrink);
-            TextView textViewFood = findViewById(R.id.textviewfood);
-
-            Glide.with(this).load(menu.getAvatar()).into(imageViewAvatar);
-            textViewDrink.setText(menu.getDrink());
-            textViewFood.setText(menu.getFood());
+        if (bundle != null) {
+            MenuItem menuItem = (MenuItem) bundle.getParcelable(MENU_ITEM);
+            ImageView imageViewAvatar = findViewById(R.id.imageView7);
+            TextView textViewDrink = findViewById(R.id.textView2);
+            TextView descTextView = findViewById(R.id.descTextView);
+            descTextView.setText(menuItem.getMenuItemDesc());
+            textViewDrink.setText(menuItem.getMenuItemName());
+            Glide.with(this).load(menuItem.getMenuItemAvatar()).into(imageViewAvatar);
         } else {
             finish();
         }

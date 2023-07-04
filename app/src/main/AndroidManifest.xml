@@ -15,7 +15,10 @@
         android:theme="@style/Theme.Onrequest"
         tools:targetApi="31">
         <activity
-            android:name=".AddMenuEntracesActivity"
+            android:name=".paymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
             android:exported="false" />
         <activity
             android:name=".CreateAccount"
