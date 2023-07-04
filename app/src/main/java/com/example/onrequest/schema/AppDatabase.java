@@ -29,6 +29,8 @@ public abstract class AppDatabase extends RoomDatabase {
                     super.onCreate(db);
                     db.execSQL( "INSERT INTO menuitem VALUES(1, 'coca cola', 10.2,'https://www.w3schools.com/howto/img_avatar.png', 'DRINK', 'desc')" );
                     db.execSQL( "INSERT INTO menuitem VALUES(2, 'hambuguer', 10.2,'https://www.w3schools.com/howto/img_avatar.png', 'FOOD', 'desc')" );
+                    db.execSQL( "INSERT INTO menuItem VALUES(3, 'Pizza', 8.5, 'https://www.w3schools.com/howto/img_avatar.png', 'FOOD', 'desc')");
+                    db.execSQL( "INSERT INTO menuItem VALUES(4, 'Pepsi', 1.2, 'https://www.w3schools.com/howto/img_avatar.png', 'DRINK', 'desc')");
                 }
             }).build();
         }
