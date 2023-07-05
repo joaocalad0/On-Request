@@ -3,6 +3,7 @@ package com.example.onrequest;
 import static com.example.onrequest.schema.MenuItemCategory.DRINK;
 import static com.example.onrequest.schema.MenuItemCategory.FOOD;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.onrequest.schema.AppDatabase;
 import com.example.onrequest.schema.MenuItem;
 import com.example.onrequest.schema.MenuItemDao;
+import com.example.onrequest.schema.MenuTable;
 
 import java.util.List;
 
@@ -22,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        MenuTable menuTable = bundle.getParcelable("table");
 
         // obter uma referência para a RecyclerView que existe no layout da MainActivity4
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -47,32 +53,17 @@ public class MainActivity extends AppCompatActivity {
         // Definir que a RecyclerView utiliza como LayoutManager o objeto que criámos anteriormente
         recyclerView.setLayoutManager(layoutManager);
 
-
         Button buttonAll = findViewById(R.id.buttonAll);
         Button buttonFood = findViewById(R.id.buttonFood);
         Button buttonDrink = findViewById(R.id.buttonDrink);
 
-       buttonAll.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               adapter.refresh(all);
-           }
-       });
+       buttonAll.setOnClickListener(buttonOnClick(adapter, all));
+       buttonFood.setOnClickListener(buttonOnClick(adapter, food));
+       buttonDrink.setOnClickListener(buttonOnClick(adapter, drink));
+    }
 
-       buttonFood.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               adapter.refresh(food);
-           }
-       });
-
-       buttonDrink.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               adapter.refresh(drink);
-           }
-       });
-
+    private View.OnClickListener buttonOnClick(MenuAdapter menuAdapter, List<MenuItem> menuItems) {
+        return view -> menuAdapter.refresh(menuItems);
     }
 
 }
