@@ -4,4 +4,5 @@ import androidx.room.Entity;
 
 @Entity
 public class cart {
+
 }

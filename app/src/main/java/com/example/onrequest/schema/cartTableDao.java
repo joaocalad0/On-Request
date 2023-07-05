@@ -1,4 +1,4 @@
-package com.example.onrequest;
+package com.example.onrequest.schema;
 
 import androidx.room.Dao;
 
