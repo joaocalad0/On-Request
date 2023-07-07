@@ -8,16 +8,16 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.onrequest.schema.AppDatabase;
-import com.example.onrequest.schema.TableDao;
+import com.example.onrequest.schema.MenuTableDao;
 
 public class tables_activity extends AppCompatActivity {
 
-    private TableDao tableDao;
+    private MenuTableDao tableDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        tableDao = AppDatabase.getInstance(this).getTableDao();
+        tableDao = AppDatabase.getInstance(this).getMenuTableDao();
 
         setContentView(R.layout.tables_activity);
 
@@ -43,6 +43,5 @@ public class tables_activity extends AppCompatActivity {
            startActivity(menuIntent);
        };
    }
-
 
 }

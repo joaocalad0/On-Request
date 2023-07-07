@@ -11,20 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.onrequest.schema.MenuItem;
+import com.example.onrequest.schema.MenuTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
 
-    // variável de instância que armazena a lista de Contactos que este Adapter vai utilizar
+    private final MenuTable menuTable;
+
     private final List<MenuItem> menuList;
 
-    /**
-     * Construtor que recebe uma Lista de contactos a ser utilizada por este ContactAdapter
-     * @param menuList
-     */
-    public MenuAdapter(List<MenuItem> menuList) {
+
+    public MenuAdapter(MenuTable menuTable, List<MenuItem> menuList) {
+        this.menuTable = menuTable;
         // armazenar na variável de instância o valor do parâmetro do construtor
         this.menuList = new ArrayList<>(menuList);
     }
@@ -62,7 +62,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         holder.rootView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MenuDetailsActivity.startActivity(holder.rootView.getContext(), menuItem);
+                MenuDetailsActivity.startActivity(holder.rootView.getContext(), menuTable, menuItem);
             }
         });
 

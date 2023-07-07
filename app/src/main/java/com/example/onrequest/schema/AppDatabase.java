@@ -21,7 +21,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract MenuItemDao getMenuItemDao();
 
     public abstract CartDao getCartDao();
-    public abstract TableDao getTableDao();
+    public abstract MenuTableDao getMenuTableDao();
 
     private static AppDatabase INSTANCE;
 
