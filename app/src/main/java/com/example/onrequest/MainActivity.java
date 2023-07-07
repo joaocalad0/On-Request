@@ -24,24 +24,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppDatabase appDatabase = AppDatabase.getInstance(this);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+
         MenuTable menuTable = bundle.getParcelable("table");
 
         // obter uma referência para a RecyclerView que existe no layout da MainActivity4
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
-        AppDatabase appDatabase = AppDatabase.getInstance(this);
         MenuItemDao menuItemDao = appDatabase.getMenuItemDao();
         List<MenuItem> all = menuItemDao.getAll();
         List<MenuItem> food = menuItemDao.getByCategory(FOOD);
         List<MenuItem> drink = menuItemDao.getByCategory(DRINK);
 
-
-
         // criar um objeto do tipo MenuAdapter (que extende Adapter)
-        MenuAdapter adapter = new MenuAdapter(all);
+        MenuAdapter adapter = new MenuAdapter(menuTable, all);
 
         // criar um objecto do tipo LinearLayoutManager para ser utilizado na RecyclerView
         // o LinearLayoutManager tem como orientação default a orientação Vertical
@@ -57,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
         Button buttonFood = findViewById(R.id.buttonFood);
         Button buttonDrink = findViewById(R.id.buttonDrink);
 
-       buttonAll.setOnClickListener(buttonOnClick(adapter, all));
-       buttonFood.setOnClickListener(buttonOnClick(adapter, food));
-       buttonDrink.setOnClickListener(buttonOnClick(adapter, drink));
+        buttonAll.setOnClickListener(buttonOnClick(adapter, all));
+        buttonFood.setOnClickListener(buttonOnClick(adapter, food));
+        buttonDrink.setOnClickListener(buttonOnClick(adapter, drink));
     }
 
     private View.OnClickListener buttonOnClick(MenuAdapter menuAdapter, List<MenuItem> menuItems) {

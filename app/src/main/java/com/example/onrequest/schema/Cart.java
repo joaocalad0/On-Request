@@ -14,14 +14,24 @@ public class Cart {
     @ColumnInfo(name = "menuItemId")
     private long menuItemId;
 
-    public Cart(long cartId, long menuItemId) {
+    @ColumnInfo(name = "cartState")
+    private CartState cartState;
+
+    public Cart(long cartId, long menuItemId, CartState cartState) {
         this.cartId = cartId;
         this.menuItemId = menuItemId;
+        this.cartState = cartState;
     }
 
     @Ignore
     public Cart(long menuItemId) {
         this.menuItemId = menuItemId;
+        this.cartState = CartState.OPEN;
+    }
+
+    @Ignore
+    public Cart() {
+        this.cartState = CartState.OPEN;
     }
 
     public long getCartId() {
@@ -38,5 +48,13 @@ public class Cart {
 
     public void setMenuItemId(long menuItemId) {
         this.menuItemId = menuItemId;
+    }
+
+    public CartState getCartState() {
+        return cartState;
+    }
+
+    public void setCartState(CartState cartState) {
+        this.cartState = cartState;
     }
 }

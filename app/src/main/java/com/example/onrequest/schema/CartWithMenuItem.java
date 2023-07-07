@@ -5,6 +5,7 @@ import androidx.room.Ignore;
 import androidx.room.Relation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CartWithMenuItem {
@@ -21,6 +22,12 @@ public class CartWithMenuItem {
     public CartWithMenuItem(Cart cart, List<MenuItem> menuItems) {
         this.cart = cart;
         this.menuItems = menuItems;
+    }
+
+    @Ignore
+    public CartWithMenuItem(MenuItem ... menuItem) {
+        this.cart = new Cart();
+        this.menuItems = Arrays.asList(menuItem);
     }
 
     @Ignore

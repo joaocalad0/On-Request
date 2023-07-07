@@ -4,11 +4,15 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Transaction;
+import androidx.room.Update;
 
 import java.util.List;
 
 @Dao
 public interface CartDao {
+
+    @Query("SELECT * FROM cart where cartId = :cartId")
+    Cart cartById(long cartId);
 
     @Transaction
     @Query("SELECT * FROM cart")
@@ -16,9 +20,12 @@ public interface CartDao {
 
     @Transaction
     @Query("SELECT * FROM cart where cartId = :id")
-    List<CartWithMenuItem> getAllCartsWithMenuItem(long id);
+    CartWithMenuItem getAllCartsWithMenuItem(long id);
 
     @Insert
-    void insert(Cart cart);
+    long insert(Cart cart);
+
+    @Update
+    void update(Cart cart);
 
 }
