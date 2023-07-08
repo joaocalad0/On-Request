@@ -1,16 +1,17 @@
 package com.example.onrequest;
 
-import android.content.Intent;
+import static com.example.onrequest.MainActivity.startMainActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.onrequest.schema.AppDatabase;
-import com.example.onrequest.schema.MenuTableDao;
+import com.example.onrequest.schema.dao.MenuTableDao;
+import com.example.onrequest.schema.db.AppDatabase;
 
-public class tables_activity extends AppCompatActivity {
+public class TablesActivity extends AppCompatActivity {
 
     private MenuTableDao tableDao;
 
@@ -36,12 +37,8 @@ public class tables_activity extends AppCompatActivity {
         table6.setOnClickListener(buttonOnClick(6));
     }
 
-   private View.OnClickListener buttonOnClick(long tableId) {
-       return view -> {
-           Intent menuIntent = new Intent(this, MainActivity.class);
-           menuIntent.putExtra("table", tableDao.getById(tableId));
-           startActivity(menuIntent);
-       };
-   }
+    private View.OnClickListener buttonOnClick(long tableId) {
+        return view -> startMainActivity(tableDao.getById(tableId), this);
+    }
 
 }

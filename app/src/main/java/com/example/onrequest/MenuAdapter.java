@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.onrequest.schema.MenuItem;
-import com.example.onrequest.schema.MenuTable;
+import com.example.onrequest.schema.entity.item.MenuItem;
+import com.example.onrequest.schema.entity.table.MenuTable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +31,10 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
     /**
      * Criar um novo ViewHolder sempre que for necessário
-     * @param parent The ViewGroup into which the new View will be added after it is bound to
-     *               an adapter position.
-     * @param viewType The view type of the new View.
      *
+     * @param parent   The ViewGroup into which the new View will be added after it is bound to
+     *                 an adapter position.
+     * @param viewType The view type of the new View.
      * @return
      */
     @NonNull
@@ -48,8 +48,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
     /**
      * Permite associar a um ViewHolder dados de um item da lista
-     * @param holder The ViewHolder which should be updated to represent the contents of the
-     *        item at the given position in the data set.
+     *
+     * @param holder   The ViewHolder which should be updated to represent the contents of the
+     *                 item at the given position in the data set.
      * @param position The position of the item within the adapter's data set.
      */
     @Override
@@ -62,7 +63,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         holder.rootView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MenuDetailsActivity.startActivity(holder.rootView.getContext(), menuTable, menuItem);
+                MenuDetailsActivity.startMenuDetailsActivity(holder.rootView.getContext(), menuTable, menuItem);
             }
         });
 
@@ -74,7 +75,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         });
     }
 
-    public void refresh (List<MenuItem> menuItems) {
+    public void refresh(List<MenuItem> menuItems) {
         this.menuList.clear();
         this.menuList.addAll(menuItems);
         notifyDataSetChanged();
@@ -82,6 +83,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
     /**
      * Devolver o número de Items que a RecyclerView deve apresentar
+     *
      * @return numero de items da recyclerView
      */
     @Override

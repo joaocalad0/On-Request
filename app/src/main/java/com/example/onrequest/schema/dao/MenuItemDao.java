@@ -1,9 +1,13 @@
-package com.example.onrequest.schema;
+package com.example.onrequest.schema.dao;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.onrequest.schema.entity.item.MenuItem;
+import com.example.onrequest.schema.entity.item.MenuItemCategory;
 
 import java.util.List;
 
@@ -17,8 +21,11 @@ public interface MenuItemDao {
     List<MenuItem> getByCategory(MenuItemCategory category);
 
     @Insert
-    void insert(MenuItem menuItem);
+    long insert(MenuItem menuItem);
 
     @Update
     void update(MenuItem menuItem);
+
+    @Delete
+    void delete(MenuItem menuItem);
 }

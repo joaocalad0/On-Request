@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class start_activity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,8 +14,8 @@ public class start_activity extends AppCompatActivity {
         setContentView(R.layout.start_activity);
     }
 
-    public void imageView1 (View view) {
-        Intent imageView1 = new Intent(this, login_activity.class);
+    public void imageView1(View view) {
+        Intent imageView1 = new Intent(this, LoginActivity.class);
         startActivity(imageView1);
     }
 }
