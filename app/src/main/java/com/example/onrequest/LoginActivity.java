@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class login_activity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,12 +14,12 @@ public class login_activity extends AppCompatActivity {
         setContentView(R.layout.login_activity);
     }
 
-    public void submit (View view) {
-        Intent submit = new Intent(this, tables_activity.class);
+    public void submit(View view) {
+        Intent submit = new Intent(this, TablesActivity.class);
         startActivity(submit);
     }
 
-    public void forgot (View view) {
+    public void forgot(View view) {
         Intent forgot = new Intent(this, CreateAccount.class);
         startActivity(forgot);
     }

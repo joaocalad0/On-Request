@@ -1,4 +1,4 @@
-package com.example.onrequest.schema;
+package com.example.onrequest.schema.entity.item;
 
 import android.net.Uri;
 import android.os.Parcel;
@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import java.util.Objects;
 
 @Entity
 public class MenuItem implements Parcelable {
@@ -130,5 +132,18 @@ public class MenuItem implements Parcelable {
         parcel.writeString(this.menuItemAvatar.toString());
         parcel.writeString(this.menuItemCategory.name());
         parcel.writeString(this.menuItemDesc);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return menuItemId == menuItem.menuItemId && Double.compare(menuItem.menuItemPrice, menuItemPrice) == 0 && Objects.equals(menuItemName, menuItem.menuItemName) && Objects.equals(menuItemAvatar, menuItem.menuItemAvatar) && menuItemCategory == menuItem.menuItemCategory && Objects.equals(menuItemDesc, menuItem.menuItemDesc);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(menuItemId, menuItemName, menuItemPrice, menuItemAvatar, menuItemCategory, menuItemDesc);
     }
 }

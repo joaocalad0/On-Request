@@ -1,4 +1,4 @@
-package com.example.onrequest.schema;
+package com.example.onrequest.schema.converters;
 
 import android.net.Uri;
 
